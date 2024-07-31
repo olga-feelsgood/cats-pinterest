@@ -1,6 +1,9 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { LikesModule } from './likes/likes.module';
+import { UsersModule } from './users/users.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -18,6 +21,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
         synchronize: true,
       }),
     }),
+    LikesModule,
+    UsersModule,
+    AuthModule,
   ],
   providers: [],
 })
